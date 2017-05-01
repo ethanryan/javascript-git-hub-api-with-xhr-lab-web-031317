@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>JavaScript GitHub API with XHR</title>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <!-- adding line above for jquery, not sure this is needed -->
     <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
     <style>
        .flexbox-container {
@@ -23,9 +28,34 @@
     <body>
     <main id="main">
     </main>
+    <!-- adding form below -->
+    <br><br>
+    <form id="formID">
+      <form onsubmit="getRepositories(); return false; showInput(); ">
+        <!-- above line is from solution -->
+
+      <b>Enter Github Username:</b>
+      <input type="text" name="username" id="username">
+      <!-- above is username input field -->
+      <input type="submit" value="Submit">
+    </form>
+
+    <br>
+
+    <label>You searched for:</label>
+    <p><span id='display'></span></p>
+    <!-- adding form output above -->
+
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
+<!--
+        // Add a link to each repository that calls a
+        // getCommits function on click and, when the
+        // request is complete, calls a displayCommits
+        // function that fills the details div with a
+        // list of commits for that repository. -->
+
         <div id="repositories"></div>
       </div>
       <div>
